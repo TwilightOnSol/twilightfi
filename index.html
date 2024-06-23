@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Finance</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .typewriter {
+            overflow: hidden; /* Ensures the text is not revealed until the animation */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Twilight Finance</h1>
+        <p class="typewriter" id="typewriter"></p>
+        <p>At Twilight Finance, we strive to revolutionize the way people invest and create a positive financial future for all.</p>
+        <p>Contact: <a href="mailto:admin@twilightfinance.xyz">admin@twilightfinance.xyz</a></p>
+        <p>Follow our CEO on <a href="https://twitter.com/TwilightOnSol" target="_blank">Twitter</a>: @TwilightOnSol</p>
+        <p>Follow our business account on <a href="https://twitter.com/TwilightFi_LLC" target="_blank">Twitter</a>: @TwilightFi_LLC</p>
+    </div>
+
+    <script>
+        const typewriter = document.getElementById('typewriter');
+        const phrases = [
+            "Holding Assets and Innovating Modern Finance",
+            "Creating a fair financial world step by step",
+            "Made for innovators by innovators"
+        ];
+        let currentPhrase = 0;
+
+        function typeWriter() {
+            let txt = phrases[currentPhrase];
+            let charIndex = 0;
+            let typingSpeed = 100; // Adjust typing speed here (milliseconds)
+
+            function type() {
+                if (charIndex < txt.length) {
+                    typewriter.textContent += txt.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(erase, 2000);
+                }
+            }
+
+            function erase() {
+                if (charIndex >= 0) {
+                    typewriter.textContent = txt.substring(0, charIndex);
+                    charIndex--;
+                    setTimeout(erase, 50);
+                } else {
+                    currentPhrase = (currentPhrase + 1) % phrases.length;
+                    setTimeout(typeWriter, 1000);
+                }
+            }
+
+            type();
+        }
+
+        typeWriter();
+    </script>
+</body>
+</html>

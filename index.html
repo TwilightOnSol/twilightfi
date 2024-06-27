@@ -33,25 +33,12 @@
             text-decoration: underline;
         }
         .typewriter {
-            overflow: hidden; /* Ensures the text is not revealed until the animation */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-            letter-spacing: .15em; /* Adjust as needed */
-            animation: 
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end infinite;
-        }
-
-        /* The typing effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: white; }
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em; /* Adjust font size as needed */
+            margin: 5px 0; /* Reduce spacing top and bottom */
+            word-wrap: break-word; /* Allows the text to wrap to a new line */
         }
     </style>
 </head>

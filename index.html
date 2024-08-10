@@ -6,91 +6,65 @@
     <title>Twilight Finance</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            line-height: 1.6;
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: auto;
+            background: #fff;
             padding: 20px;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            font-size: 36px;
+            color: #333;
+            text-align: center;
         }
-        p {
-            font-size: 18px;
+        h2 {
+            color: #555;
+            margin-top: 30px;
         }
         a {
-            color: #fff;
+            color: #007bff;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
-        .typewriter {
-            display: inline-block;
-            width: 100%;
+        .quote {
+            font-style: italic;
             text-align: center;
-            font-size: 1.2em; /* Adjust font size as needed */
-            margin: 5px 0; /* Reduce spacing top and bottom */
-            word-wrap: break-word; /* Allows the text to wrap to a new line */
+            margin: 20px 0;
+        }
+        .project-list {
+            margin-top: 20px;
+        }
+        .project-list a {
+            display: block;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Twilight Finance</h1>
-        <p class="typewriter" id="typewriter"></p>
-        <p>At Twilight Finance, we strive to revolutionize the way people invest and create a positive financial future for all.</p>
-        <p>Contact: <a href="mailto:admin@twilightfinance.xyz">admin@twilightfinance.xyz</a></p>
-        <p>Follow our CEO on <a href="https://twitter.com/TwilightOnSol" target="_blank">Twitter</a>: @TwilightOnSol</p>
-        <p>Follow our business account on <a href="https://twitter.com/TwilightFi_LLC" target="_blank">Twitter</a>: @TwilightFi_LLC</p>
+        <h1>Twilight Finance</h1>
+        <p class="quote">"Illuminating modern finance"</p>
+        
+        <h2>Socials</h2>
+        <p>Twitter/X: <a href="https://twitter.com/TwilightFi_LLC" target="_blank">@TwilightFi_LLC</a></p>
+        <p>Contact: <a href="mailto:Admin@TwilightFinance.xyz">Admin@TwilightFinance.xyz</a></p>
+        
+        <h2>Projects</h2>
+        <div class="project-list">
+            <p><a href="https://www.roblox.com/groups/34706101/Shadow-Guild-SHDW#!/about" target="_blank">SHDW Guild</a></p>
+            <p><a href="https://www.roblox.com/groups/14725222/Silent-Jokers-SJ#!/about" target="_blank">Silent Jokers</a></p>
+            <p><a href="https://www.lootrush.com/profile/37f51290-63c4-4f51-aadf-aed0d7a00c6d" target="_blank">Lootrush Profile</a></p>
+            <p><a href="#" target="_blank">Twilight Finance Media (Soon)</a></p>
+        </div>
     </div>
-
-    <script>
-        const typewriter = document.getElementById('typewriter');
-        const phrases = [
-            "Holding Assets and Innovating Modern Finance",
-            "Creating a fair financial world step by step",
-            "Made for innovators by innovators"
-        ];
-        let currentPhrase = 0;
-
-        function typeWriter() {
-            let txt = phrases[currentPhrase];
-            let charIndex = 0;
-            let typingSpeed = 100; // Adjust typing speed here (milliseconds)
-
-            function type() {
-                if (charIndex < txt.length) {
-                    typewriter.textContent += txt.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(type, typingSpeed);
-                } else {
-                    setTimeout(erase, 2000);
-                }
-            }
-
-            function erase() {
-                if (charIndex >= 0) {
-                    typewriter.textContent = txt.substring(0, charIndex);
-                    charIndex--;
-                    setTimeout(erase, 50);
-                } else {
-                    currentPhrase = (currentPhrase + 1) % phrases.length;
-                    setTimeout(typeWriter, 1000);
-                }
-            }
-
-            type();
-        }
-
-        typeWriter();
-    </script>
 </body>
 </html>
